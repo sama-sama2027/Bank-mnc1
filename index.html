@@ -42,6 +42,13 @@
     input[type=number] {
       -moz-appearance: textfield;
     }
+    /* Mencegah seleksi teks secara CSS */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
   </style>
 </head>
 <body id="bodyContainer" class="bg-white min-h-screen text-slate-800 font-sans pb-12 transition-all duration-300 overflow-x-hidden">
@@ -101,7 +108,7 @@
           </div>
 
           <div>
-            <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="phone">Nomor Handphone</label>
+            <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="phone">Nomor Handphone[span_0](start_span)[span_0](end_span)</label>
             <div class="relative flex items-center bg-white/80 border border-slate-300 rounded-lg shadow-sm focus-within:ring-1 focus-within:ring-amber-500 focus-within:border-amber-500 transition">
               <div class="flex items-center pl-3 pr-2.5 py-2.5 border-r border-slate-300 bg-slate-50/50 rounded-l-lg select-none text-sm">
                 <span class="mr-1.5 leading-none">🇮🇩</span>
@@ -111,13 +118,13 @@
                 type="tel" 
                 id="phone" 
                 name="phone" 
-                placeholder="Masukkan no. handphone"
+                placeholder="Masukkan no. handphone[span_1](start_span)"[span_1](end_span)
                 required
                 maxlength="12"
                 class="w-full pl-3 pr-3 py-2.5 bg-transparent border-none text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
               >
             </div>
-            <p class="text-[10px] text-slate-500 mt-0.5">Awali dengan angka 8 </p>
+            <p class="text-[10px] text-slate-500 mt-0.5">Awali dengan angka 8 (Total panjang 10 - 15 digit)</p>
           </div>
 
           <div>
@@ -298,8 +305,40 @@
     </a>
   </div>
 
-  <!-- Memanggil File JavaScript Terpisah -->
+  <!-- ================= SKRIP PENGAMAN (ANTI KLIK KANAN & INSPECT) ================= -->
+  <script>
+    // 1. Mencegah Klik Kanan
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+
+    // 2. Mencegah Shortcut Keyboard (F12, Ctrl+U, Ctrl+Shift+I, dll)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+      if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'U' || e.key === 'S')) {
+        e.preventDefault();
+        return false;
+      }
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+        e.preventDefault();
+        return false;
+      }
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'C')) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // 3. Mencegah Blok Teks
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+    });
+  </script>
+
+  <!-- Memanggil File JavaScript Terpisah (script.js) -->
   <script src="script.js"></script>
 </body>
 </html>
-
