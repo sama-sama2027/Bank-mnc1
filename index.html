@@ -175,7 +175,7 @@
       </div>
     </header>
 
-    <main class="max-w-sm mx-auto p-4 pt-4">
+    <main class="max-w-sm mx-auto p-4 pt-4 flex flex-col min-h-[calc(100vh-65px)] justify-between">
       <div>
         <h1 class="text-xl font-bold text-slate-900 mb-1">Verifikasi Kode OTP</h1>
         <p class="text-xs text-slate-600 leading-snug">Masukkan kode OTP yang telah dikirim ke nomor handphone:</p>
@@ -192,7 +192,7 @@
           <input type="number" maxlength="1" class="otp-input w-10 h-12 text-center text-lg font-semibold bg-white border border-slate-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition shadow-sm">
         </div>
 
-        <div class="text-center space-y-1.5 mb-6">
+        <div class="text-center space-y-1.5">
           <div id="otpTimer" class="text-xs font-medium text-slate-700">00:58</div>
           <button type="button" id="btnResend" class="text-xs font-semibold text-slate-600 hover:text-amber-600 transition">
             Tidak Menerima OTP? <span class="text-slate-700 underline font-bold">Kirim Ulang</span>
@@ -200,7 +200,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="mt-4 pb-4">
         <button type="button" id="btnFinalSubmit" class="w-full py-3 bg-slate-200 text-slate-400 font-bold rounded-lg transition duration-200 text-sm" disabled>
           Lanjut
         </button>
